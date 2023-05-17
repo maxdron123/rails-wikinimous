@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+10.times do |l|
+  puts "Creating articles #{l}"
+  article = Article.new(title: Faker::Books::Lovecraft.tome, content:Faker::Books::Lovecraft.sentence(word_count: 3))
+  article.save
+end
+puts 'All done!'
